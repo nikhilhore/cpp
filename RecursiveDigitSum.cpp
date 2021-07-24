@@ -14,9 +14,13 @@ string recursiveSum(string n){
 }
 
 int main(void){
-	string n;
-	cin >> n;
-	string a =recursiveSum(n);
+	int k;
+	string n, x;
+	cin >> n >> k;
+	for (int i=0; i<k; ++i){
+		x+=n;
+	}
+	string a =recursiveSum(x);
 	cout << a;
 	return 0;
 }
