@@ -1,9 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+string dectobin(int n){
+    string binary="";
+    while (n){
+        binary+= to_string(n%2);
+        n/= 2;
+    }
+    reverse(binary.begin(), binary.end());
+    return binary;
+}
+
 int main(){
-    map <int, int> m;
-    cout << m[1];
-    cout << m[2];
+    int n;
+    cin >> n;
+    cout << dectobin(n);
     return 0;
 }
