@@ -2,21 +2,19 @@
 #include <vector>
 using namespace std;
 
-bool helper(vector<int> nums, int target, vector<int> arr, int j){
+bool helper(vector<int> nums, int target, int j){
 	if (target==0) return true;
 	if (j==nums.size()) return false;
-	bool d1= helper(nums, target, arr, j+1);
+	bool d1= helper(nums, target, j+1);
 	target-= nums[j];
-	arr.push_back(nums[j]);
-	bool d2= helper(nums, target, arr, j+1);
+	bool d2= helper(nums, target, j+1);
 	return d1 || d2;
 }
 
 bool canSum(vector<int> nums, int target){
 	if (target==0) return true;
 	if (nums.empty()) return false;
-	vector<int> arr;
-	return helper(nums, target, arr, 0);
+	return helper(nums, target, 0);
 }
 
 int main(){
