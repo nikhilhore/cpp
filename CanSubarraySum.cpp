@@ -4,11 +4,12 @@ using namespace std;
 
 bool helper(vector<int> nums, int target, int j){
 	if (target==0) return true;
-	if (j==nums.size()) return false;
+	if (target<0 || j>=nums.size()) return false;
 	bool d1= helper(nums, target, j+1);
+	if (d1) return true;
 	target-= nums[j];
 	bool d2= helper(nums, target, j+1);
-	return d1 || d2;
+	return d2;
 }
 
 bool canSum(vector<int> nums, int target){

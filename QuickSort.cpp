@@ -1,4 +1,4 @@
-/* C implementation QuickSort */
+/* C++ implementation QuickSort */
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -51,6 +51,7 @@ void quickSort(int arr[], int low, int high)
 		quickSort(arr, low, pi - 1);
 		quickSort(arr, pi + 1, high);
 	}
+	return;
 }
 
 void printArray(int arr[], int size)
